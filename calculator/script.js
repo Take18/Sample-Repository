@@ -13,13 +13,27 @@ $(function() {
 
         push_num.push($(this).text());
         if (calculation == true) {
-            num_2 = push_num.join('');
-            $('#display').text(num_2);
-            console.log(num_2);
+            if (push_num [0] == '.') {
+                let dot_num = push_num.join('');
+                num_2 = '0' + dot_num;
+                $('#display').text(num_2);
+                console.log(num_2);
+            } else {
+                num_2 = push_num.join('');
+                $('#display').text(num_2);
+                console.log(num_2);
+            }
         } else {
-            num_1 = push_num.join('');
-            $('#display').text(num_1);
-            console.log(num_1);
+            if (push_num [0] == '.') {
+                let dot_num = push_num.join('');
+                num_1 = '0' + dot_num;
+                $('#display').text(num_1);
+                console.log(num_1);
+            } else {
+                num_1 = push_num.join('');
+                $('#display').text(num_1);
+                console.log(num_1);
+            } 
         }
     });
 
@@ -30,6 +44,10 @@ $(function() {
     });
 
     $('#equal').on('click', function () {
+
+        if (num_1 == '') {
+            num_1 = 0;
+        }
 
         let int_1 = parseFloat(num_1);
         console.log(int_1);
@@ -59,6 +77,8 @@ $(function() {
         }
         $('#display').text(answer);
         num_1 = answer;
+        calculation = false;
+        push_num = [];
     });
 
     $('.clear').on('click', function () {
