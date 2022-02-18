@@ -118,7 +118,6 @@ $(function() {
     $('#dot').on('click', function () {
         dot_key = true;
     });
-    
 
     $('.operator').on('click', function () {
         cal = $(this).attr('id');
@@ -135,6 +134,10 @@ $(function() {
 
         if (num_1 == '') {
             num_1 = 0;
+        }
+
+        if (num_2 == '') {
+            num_2 = num_1;
         }
 
         let int_1 = parseFloat(num_1);
