@@ -22,6 +22,7 @@ let numbers = document.getElementsByClassName('number'),
     memory_clear = document.getElementById('memory_clear'),
     memory_recall = document.getElementById('memory_recall');
 
+
 minus.textContent = "-";
 
 minus.addEventListener('click',() => {
